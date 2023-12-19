@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rock-Paper-Scissor-Lizard-Spock</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main>
+      <h1>Rock-Paper-Scissor-Lizard-Spock</h1>
+      <div class="players-container">
+        <section class="player player--1">
+          <h2 class="player-name">Player-1</h2>
+          <p class="score">Score: <span id="score--1">0</span></p>
+          <div class="images-container">
+            <img src="images/rock.svg" alt="rock" class="image" id="img-0" />
+            <img src="images/paper.svg" alt="paper" class="image" id="img-1" />
+            <img src="images/scissor.svg" alt="img" class="image" id="img-2" />
+            <img src="images/lizard.svg" alt="img" class="image" id="img-3" />
+            <img src="images/spock.svg" alt="img" class="image" id="img-4" />
+          </div>
+        </section>
+        <section class="player player--2">
+          <h2 class="player-name">Player-2</h2>
+          <p class="score">Score: <span id="score--2">0</span></p>
+          <div class="images-container">
+            <img src="images/rock.svg" alt="rock" class="image" id="img-5" />
+            <img src="images/paper.svg" alt="paper" class="image" id="img-6" />
+            <img src="images/scissor.svg" alt="img" class="image" id="img-7" />
+            <img src="images/lizard.svg" alt="img" class="image" id="img-8" />
+            <img src="images/spock.svg" alt="img" class="image" id="img-9" />
+          </div>
+        </section>
+        <p class="message"></p>
+        <p class="win-message hidden">+1</p>
+        <p class="tie-message hidden">Tie</p>
+        <div class="versus">VS</div>
+        <img
+          src="images/question-mark.svg"
+          class="image"
+          id="selection-player1"
+        />
+        <img
+          src="images/question-mark.svg"
+          class="image"
+          id="selection-player2"
+        />
+        <p class="round">
+          Round: <span id="currentRound">0</span>/<span id="totalRounds"
+            >5</span
+          >
+        </p>
+        <p class="tie">Ties: <span id="tie">0</span></p>
+        <button class="btn play" id="play">Play</button>
+        <button class="btn ready" id="reset">Reset</button>
+      </div>
+      <p class="label-rules">Rules:</p>
+    </main>
+    <div class="rules hidden">
+      <h2>Rules</h2>
+      <ul>
+        <li>
+          <p id="total-rounds-rule">
+            - There are total 3 rounds. If score ties after 3 rounds, then an
+            additional round is added until winner is declared.
+          </p>
+          <p>- A player has five items: Rock, Paper, Scissor, Lizard, Spock.</p>
+          <p>
+            - The game includes Lizard and Spock so there are fewer ties when
+            you play (inspired from a TV Show - 'The Big Bang Theory').
+          </p>
+          <p>- A player can choose one of the items.</p>
+          <p>
+            - Scissor cuts Paper.
+            <strong>Scissor</strong> wins.
+          </p>
+          <p>- Paper covers Rock. <strong>Paper</strong> wins.</p>
+
+          <p>- Rock crushes Lizard. <strong>Rock</strong> wins.</p>
+          <p>- Lizard poisons Spock. <strong>Lizard</strong> wins.</p>
+          <p>- Spock smashes Scissor. <strong>Spock</strong> wins.</p>
+          <p>- Scissor decapitates Lizard . <strong>Scissor</strong> wins.</p>
+          <p>- Lizard eats Paper. <strong>Lizard</strong> wins.</p>
+          <p>- Paper disproves Spock. <strong>Paper</strong> wins.</p>
+          <p>- Spock vaporizes Rock. <strong>Spock</strong> wins.</p>
+          <p>- Rock crushes Scissor <strong>Rock</strong> wins.</p>
+        </li>
+      </ul>
+      <button class="btn-close-rules">X</button>
+    </div>
+    <div class="overlay hidden"></div>
+    <script src="script.js"></script>
+  </body>
+</html>

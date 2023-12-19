@@ -1,0 +1,271 @@
+/* 
+COLOR PALETTE
+#22092C
+#872341
+#BE3144
+#F05941
+
+*/
+
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  position: relative;
+  font-weight: 400;
+  font-size: 16px;
+  color: #333;
+  font-family: "Press Start 2P";
+  height: 100vh;
+  background: linear-gradient(to top left, #872341 0%, #f05941 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+main {
+  position: relative;
+  width: 900px;
+  height: 600px;
+  background-color: rgba(250, 250, 250, 0.2);
+  border-radius: 7px;
+  display: flex;
+  flex-direction: column;
+}
+
+ul {
+  list-style: none;
+}
+
+h1 {
+  font-size: 24px;
+  text-align: end;
+  margin-top: 24px;
+  padding-right: 24px;
+  padding-bottom: 16px;
+  border-bottom: 2px solid #444;
+}
+
+h1 span {
+  display: inline-block;
+  transform: translate(10px, 7px);
+}
+
+.hidden {
+  display: none;
+}
+
+.message {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.win-message {
+  position: absolute;
+  top: 40%;
+  color: green;
+}
+
+.tie-message {
+  position: absolute;
+  top: 38%;
+  left: 47.5%;
+  color: #fff;
+}
+
+.versus {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  border-radius: 100px;
+  background-color: #872341;
+  color: #fff;
+}
+
+.tie {
+  position: absolute;
+  top: 65%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 14px;
+}
+
+.round {
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 14px;
+}
+
+.players-container {
+  display: flex;
+  position: relative;
+  flex-basis: 100%;
+}
+
+.player {
+  flex-basis: 50%;
+  display: flex;
+  flex-direction: column;
+}
+
+.player--1 {
+  align-items: start;
+  padding: 48px;
+}
+
+.player--2 {
+  align-items: end;
+  padding: 48px;
+}
+
+.winner .player-name {
+  color: green;
+}
+
+.winner .player-name::after {
+  content: "Wins!!!";
+  margin-left: 12px;
+}
+
+.player-name {
+  /* border: 1px solid #fff; */
+  font-size: 20px;
+  margin-bottom: 24px;
+}
+
+.score {
+  font-size: 14px;
+  margin-bottom: 40px;
+}
+
+.images-container {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.image {
+  height: 60px;
+  aspect-ratio: 1;
+  border-style: solid;
+  border-width: 1px;
+  border-color: transparent;
+}
+
+#selection-player1,
+#selection-player2 {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+#selection-player1 {
+  left: 35%;
+}
+
+#selection-player2 {
+  right: 35%;
+}
+
+.btn {
+  position: absolute;
+  top: 80%;
+  border: none;
+  background: none;
+  font-size: 18px;
+  font-family: inherit;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  background-color: #872341;
+  padding: 12px 24px;
+  color: #fff;
+}
+
+.btn:disabled:hover {
+  cursor: not-allowed;
+  background-color: #872341;
+}
+
+.btn:hover {
+  background-color: rgba(135, 36, 66, 0.61);
+}
+
+.btn.play {
+  left: 34%;
+}
+
+.btn.ready {
+  left: 53%;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(3px);
+  z-index: 99;
+}
+
+.label-rules {
+  position: absolute;
+  top: 12px;
+  left: 8px;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.rules {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 600px;
+  background: linear-gradient(to top left, #872341 0%, #f05941 100%);
+  border-radius: 7px;
+  z-index: 999;
+  font-family: sans-serif;
+  padding: 32px;
+  padding-bottom: 44px;
+  font-size: 18px;
+}
+
+.rules h2 {
+  text-align: center;
+  text-decoration: underline;
+  margin-bottom: 32px;
+}
+
+.rules li {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.btn-close-rules {
+  position: absolute;
+  top: 16px;
+  right: 24px;
+  border: none;
+  background: none;
+  font-size: 18px;
+  cursor: pointer;
+}
