@@ -15,14 +15,42 @@ COLOR PALETTE
   box-sizing: border-box;
 }
 
+:root {
+  /* By default, 1rem = 16px */
+  /* 62.5% of 16px = 10px  */
+  /* Then, 1rem becomes equal to 10px */
+  font-size: 62.5%;
+
+  --default-font-size: 1.6rem;
+  --sgbus-green: #9be564ff;
+  --green-yellow: #b9ee60ff;
+  --citrine: #d4ca3cff;
+  --goldenrod: #d19c1dff;
+  --dark-goldenrod: #bc871dff;
+  --golden-brown: #a7711cff;
+  --apple-green: #a1a939;
+  --apple-green: #b1ba3f;
+  --pear-1: #c3cd45;
+  --pear-3: #d6e04c;
+
+  --mindaro: #c8f35eff;
+  --pear: #d6e14cff;
+  --citron: #cbcd46;
+  --oldgold: #d3b32d;
+  --border-color: #d3b32d77;
+  --russet: #7d451bff;
+  --kobicha: #62391b;
+  --bistre: #472c1bff;
+}
+
 body {
   position: relative;
   font-weight: 400;
   font-size: 16px;
-  color: #333;
+  color: var(--citron);
   font-family: "Press Start 2P";
   height: 100vh;
-  background: linear-gradient(to top left, #872341 0%, #f05941 100%);
+  background: var(--bistre);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -32,7 +60,7 @@ main {
   position: relative;
   width: 900px;
   height: 600px;
-  background-color: rgba(250, 250, 250, 0.2);
+  background-color: var(--kobicha);
   border-radius: 7px;
   display: flex;
   flex-direction: column;
@@ -48,7 +76,7 @@ h1 {
   margin-top: 24px;
   padding-right: 24px;
   padding-bottom: 16px;
-  border-bottom: 2px solid #444;
+  border-bottom: 2px solid var(--border-color);
 }
 
 h1 span {
@@ -57,7 +85,7 @@ h1 span {
 }
 
 .hidden {
-  display: none;
+  display: none !important;
 }
 
 .message {
@@ -65,12 +93,13 @@ h1 span {
   top: 30%;
   left: 50%;
   transform: translateX(-50%);
+  color: #fff;
 }
 
 .win-message {
   position: absolute;
   top: 40%;
-  color: green;
+  color: #fff;
 }
 
 .tie-message {
@@ -91,8 +120,9 @@ h1 span {
   width: 60px;
   height: 60px;
   border-radius: 100px;
-  background-color: #872341;
-  color: #fff;
+  background-color: var(--russet);
+  border: 1px solid var(--border-color);
+  color: var(--citron);
 }
 
 .tie {
@@ -134,7 +164,7 @@ h1 span {
 }
 
 .winner .player-name {
-  color: green;
+  color: #fff;
 }
 
 .winner .player-name::after {
@@ -143,7 +173,6 @@ h1 span {
 }
 
 .player-name {
-  /* border: 1px solid #fff; */
   font-size: 20px;
   margin-bottom: 24px;
 }
@@ -156,19 +185,22 @@ h1 span {
 .images-container {
   display: flex;
   flex-direction: column;
-  gap: 18px;
+  gap: 24px;
 }
 
 .image {
-  height: 60px;
+  display: inline-block;
+  height: 48px;
   aspect-ratio: 1;
   border-style: solid;
   border-width: 1px;
   border-color: transparent;
+  padding: 2px;
 }
 
 #selection-player1,
 #selection-player2 {
+  height: 60px;
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -186,24 +218,28 @@ h1 span {
   position: absolute;
   top: 80%;
   border: none;
+  border-radius: 7px;
   background: none;
-  font-size: 18px;
+  font-size: 16px;
   font-family: inherit;
   cursor: pointer;
   text-transform: uppercase;
   letter-spacing: 2px;
-  background-color: #872341;
+  background-color: var(--bistre);
   padding: 12px 24px;
-  color: #fff;
+  color: var(--citron);
+  transition: all 0.3s;
 }
 
 .btn:disabled:hover {
   cursor: not-allowed;
-  background-color: #872341;
+  background-color: var(--bistre) !important;
+  color: var(--citron) !important;
 }
 
 .btn:hover {
-  background-color: rgba(135, 36, 66, 0.61);
+  color: var(--bistre) !important;
+  background-color: var(--citron) !important;
 }
 
 .btn.play {
@@ -239,7 +275,7 @@ h1 span {
   left: 50%;
   transform: translate(-50%, -50%);
   width: 600px;
-  background: linear-gradient(to top left, #872341 0%, #f05941 100%);
+  background: var(--kobicha);
   border-radius: 7px;
   z-index: 999;
   font-family: sans-serif;
@@ -268,4 +304,5 @@ h1 span {
   background: none;
   font-size: 18px;
   cursor: pointer;
+  color: var(--citron);
 }

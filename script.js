@@ -60,8 +60,8 @@ const init = function () {
   overlay.classList.add("hidden");
 
   btnPlay.removeAttribute("disabled");
-  btnPlay.style.color = "#fff";
-  btnPlay.style.backgroundColor = "#872341";
+  btnPlay.style.color = "#cbcd46";
+  btnPlay.style.backgroundColor = "#472c1bff";
   player1Container.classList.remove("winner");
   player2Container.classList.remove("winner");
   selectionPlayer1.src = `images/question-mark.svg`;
@@ -277,8 +277,8 @@ btnPlay.addEventListener("click", function () {
           return;
         }
         btnPlay.setAttribute("disabled", true);
-        btnPlay.style.color = "#333";
-        btnPlay.style.backgroundColor = "#555";
+        btnPlay.style.color = "#cbcd46";
+        btnPlay.style.backgroundColor = "#472c1bff";
         if (score1 > score2) {
           player1Container.classList.add("winner");
         } else if (score2 > score1) {
